@@ -8,7 +8,7 @@ const CTASection = () => {
   return (
     <section className="py-20 md:py-28">
       <div className="container mx-auto px-6">
-        <div className="relative rounded-3xl overflow-hidden p-10 md:p-16 text-center" style={{ background: "var(--hero-gradient)" }}>
+        <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden p-6 sm:p-10 md:p-16 text-center" style={{ background: "var(--hero-gradient)" }}>
           <div className="relative z-10">
             <img src={logo} alt="Hello-02" className="w-16 h-16 rounded-2xl mx-auto mb-6 shadow-lg" />
             <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
