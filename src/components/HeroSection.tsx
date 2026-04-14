@@ -29,10 +29,13 @@ const HeroSection = () => {
               Available on Android
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-foreground mb-5">
-              Your Mental Health,{" "}
-              <span className="text-gradient">Our Priority</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-foreground mb-3">
+              Hello-02 Mental Health App
             </h1>
+
+            <p className="text-xl md:text-2xl font-semibold text-gradient mb-4">
+              Talk, Heal & Grow
+            </p>
 
             <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-md">
               Bangladesh's trusted mental health companion. Track moods, practice mindfulness, connect with verified psychologists — all in one app.
