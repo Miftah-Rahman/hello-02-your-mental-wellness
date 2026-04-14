@@ -23,7 +23,7 @@ const ScreenshotsSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 max-w-5xl mx-auto">
           {screenshots.map((shot) => (
             <div key={shot.label} className="group">
               <div className="rounded-[1.5rem] overflow-hidden shadow-lg border-[4px] border-foreground/5 group-hover:shadow-xl transition-shadow duration-300 group-hover:scale-[1.02] transition-transform">

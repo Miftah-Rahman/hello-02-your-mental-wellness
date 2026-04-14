@@ -29,7 +29,7 @@ const HeroSection = () => {
               Available on Android
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-foreground mb-3">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-foreground mb-3">
               Hello-02 Mental Health App
             </h1>
 
@@ -71,11 +71,11 @@ const HeroSection = () => {
           {/* Right mockups */}
           <div className="relative flex justify-center lg:justify-end">
             <div className="relative">
-              <div className="w-56 md:w-64 rounded-[2.5rem] overflow-hidden shadow-2xl animate-float border-[6px] border-foreground/10">
-                <img src={screenshotHome} alt="Hello-02 app home screen showing mood tracking and daily streak" className="w-full" />
+              <div className="w-44 sm:w-56 md:w-64 rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden shadow-2xl animate-float border-[4px] sm:border-[6px] border-foreground/10">
+                <img src={screenshotHome} alt="Hello-02 app home screen showing mood tracking and daily streak" className="w-full" loading="eager" width="256" height="512" />
               </div>
-              <div className="absolute -right-12 top-16 w-48 md:w-56 rounded-[2.5rem] overflow-hidden shadow-xl animate-float-delayed border-[6px] border-foreground/10">
-                <img src={screenshotMood} alt="Hello-02 mood tracker with weekly progress chart" className="w-full" />
+              <div className="absolute -right-8 sm:-right-12 top-12 sm:top-16 w-36 sm:w-48 md:w-56 rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden shadow-xl animate-float-delayed border-[4px] sm:border-[6px] border-foreground/10">
+                <img src={screenshotMood} alt="Hello-02 mood tracker with weekly progress chart" className="w-full" loading="eager" width="224" height="448" />
               </div>
             </div>
           </div>
