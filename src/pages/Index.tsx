@@ -37,8 +37,9 @@ const Index = () => {
           content="Hello-02 is Bangladesh's leading mental health app. Track your mood, practice guided breathing, take DASS-42 assessments, and connect with verified psychologists. Download free on Android."
         />
         <meta name="keywords" content="mental health app Bangladesh, mood tracker, psychologist Bangladesh, breathing exercise, DASS-42 assessment, therapy app, Hello-02, মানসিক স্বাস্থ্য অ্যাপ" />
-        <link rel="canonical" href="https://hello-02.app" />
+        <link rel="canonical" href="https://hello02.app" />
         <meta property="og:title" content="Hello-02: Best Mental Health App in Bangladesh" />
+        <meta property="og:url" content="https://hello02.app" />
         <meta property="og:description" content="Track moods, practice mindfulness, and connect with verified psychologists. Bangladesh's trusted mental health companion." />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
