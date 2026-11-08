@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "@/assets/logo.png";
 import { Menu, X, Sparkles } from "lucide-react";
@@ -6,6 +6,15 @@ import { Menu, X, Sparkles } from "lucide-react";
 const Navbar = () => {
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 15);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const scrollToDownload = () => {
     if (location.pathname !== "/") {
@@ -17,15 +26,24 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/85 backdrop-blur-xl border-b border-border/60 transition-all">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-background/90 backdrop-blur-xl border-b border-border/80 shadow-sm py-0"
+          : "bg-background/60 backdrop-blur-md border-b border-border/30 py-1"
+      }`}
+    >
       <div className="container mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         {/* Brand Logo */}
         <Link to="/" className="flex items-center gap-2.5 group">
-          <img
-            src={logo}
-            alt="Hello-02 Logo"
-            className="w-9 h-9 rounded-xl transition-transform group-hover:scale-105 shadow-sm"
-          />
+          <div className="relative">
+            <img
+              src={logo}
+              alt="Hello-02 Logo"
+              className="w-9 h-9 rounded-xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 shadow-sm"
+            />
+            <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-500 rounded-full border-2 border-background animate-pulse" />
+          </div>
           <div className="flex flex-col">
             <span className="font-bold text-lg text-foreground tracking-tight flex items-center gap-1.5">
               Hello-02
@@ -73,7 +91,7 @@ const Navbar = () => {
 
           <button
             onClick={scrollToDownload}
-            className="bg-primary text-primary-foreground px-5 py-2 rounded-full text-sm font-semibold hover:opacity-90 hover:shadow-md transition-all active:scale-95"
+            className="bg-primary text-primary-foreground px-5 py-2 rounded-full text-sm font-semibold hover:opacity-90 hover:shadow-md transition-all active:scale-95 shimmer-effect shadow-sm"
           >
             Download App
           </button>

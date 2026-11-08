@@ -1,7 +1,16 @@
+# Robots.txt for Hello-02 Mental Health App
+# https://hello02.app
+
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: DuckDuckBot
 Allow: /
 
 User-agent: Twitterbot
@@ -12,3 +21,7 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+# Sitemap Location
+Sitemap: https://hello02.app/sitemap.xml
+Host: https://hello02.app

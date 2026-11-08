@@ -137,30 +137,114 @@ const Support = () => {
     setIsSubmitted(false);
   };
 
+  const supportFaqs = [
+    {
+      q: "How do I download the Hello-02 app?",
+      a: "You can download Hello-02 directly from Google Play Store or Apple App Store by searching 'Hello-02' or using the official links on our website.",
+    },
+    {
+      q: "Is my mood tracking data private?",
+      a: "Yes, 100%. All clinical assessment results, mood entries, and notes are encrypted and never shared with third parties.",
+    },
+    {
+      q: "How do I book a session with a psychologist?",
+      a: "Open the Hello-02 mobile app, navigate to the 'Specialists' tab, select a verified clinical psychologist, and choose an available appointment slot.",
+    },
+    {
+      q: "I found a bug in the app, how to report it?",
+      a: "Please fill out the contact form on this page or email us directly at support@hello02.app with your device details and issue description.",
+    },
+  ];
+
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "ContactPage",
-    name: "Customer Support & Help Desk | Hello-02 Mental Health App",
-    description: "Submit your questions, technical issues, or feedback directly to the Hello-02 support team at support@hello02.app.",
-    url: "https://hello02.app/support",
+    "@graph": [
+      {
+        "@type": "ContactPage",
+        "@id": "https://hello02.app/support#webpage",
+        "url": "https://hello02.app/support",
+        "name": "Customer Support & Help Desk | Hello-02 Mental Health App",
+        "description":
+          "Submit your questions, technical issues, or feedback directly to the Hello-02 support team at support@hello02.app.",
+        "breadcrumb": {
+          "@id": "https://hello02.app/support#breadcrumbs",
+        },
+        "inLanguage": ["en-US", "bn-BD"],
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://hello02.app/#organization",
+        "name": "Hello-02",
+        "url": "https://hello02.app",
+        "logo": "https://hello02.app/favicon.png",
+        "email": "support@hello02.app",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://hello02.app/support#breadcrumbs",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://hello02.app",
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Support",
+            "item": "https://hello02.app/support",
+          },
+        ],
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://hello02.app/support#faq",
+        "mainEntity": supportFaqs.map((f) => ({
+          "@type": "Question",
+          "name": f.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": f.a,
+          },
+        })),
+      },
+    ],
   };
 
   return (
     <>
       <Helmet>
+        <html lang="en" />
         <title>Help & Support | Hello-02 Mental Health App</title>
         <meta
           name="description"
           content="Need assistance with the Hello-02 app? Contact our support team directly at support@hello02.app. We are here to help."
         />
-        <meta name="keywords" content="Hello-02 support, customer service, mental health app help, support@hello02.app, contact hello-02" />
+        <meta
+          name="keywords"
+          content="Hello-02 support, customer service, mental health app help, support@hello02.app, contact hello-02, মানসিক স্বাস্থ্য সহায়তা"
+        />
         <link rel="canonical" href="https://hello02.app/support" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+        {/* OpenGraph */}
         <meta property="og:title" content="Help & Support | Hello-02 Mental Health" />
+        <meta property="og:site_name" content="Hello-02" />
         <meta property="og:description" content="Reach out to Hello-02 support team at support@hello02.app for any help or inquiries." />
         <meta property="og:url" content="https://hello02.app/support" />
         <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:image" content="https://hello02.app/favicon.png" />
+        <meta property="og:image:width" content="512" />
+        <meta property="og:image:height" content="512" />
+
+        {/* Twitter */}
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Help & Support | Hello-02 Mental Health" />
+        <meta name="twitter:description" content="Reach out to Hello-02 support team at support@hello02.app for any help or inquiries." />
+        <meta name="twitter:image" content="https://hello02.app/favicon.png" />
+
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 

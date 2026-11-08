@@ -39,8 +39,23 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <a href="/#download" className="hover:text-primary transition-colors">
-                  Download Mobile App
+                <a
+                  href="https://apps.apple.com/us/app/hello-02-mental-health-app/id6805609446"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors"
+                >
+                  Download on App Store (iOS)
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.teambbs.hello02"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors"
+                >
+                  Download on Google Play (Android)
                 </a>
               </li>
             </ul>
