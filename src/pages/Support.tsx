@@ -22,7 +22,7 @@ import { toast } from "sonner";
 const Support = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("App Issue / Bug Report");
+  const [subject, setSubject] = useState("General Inquiry");
   const [message, setMessage] = useState("");
 
   // Validation errors
@@ -131,7 +131,7 @@ const Support = () => {
   const handleResetForm = () => {
     setName("");
     setEmail("");
-    setSubject("App Issue / Bug Report");
+    setSubject("General Inquiry");
     setMessage("");
     setErrors({});
     setIsSubmitted(false);
@@ -302,7 +302,7 @@ const Support = () => {
                         setName(e.target.value);
                         if (errors.name) setErrors((prev) => ({ ...prev, name: undefined }));
                       }}
-                      placeholder="e.g. Tanvir Ahmed"
+                      placeholder="Your Name"
                       className={`w-full bg-muted/50 text-foreground placeholder:text-muted-foreground px-4 py-3 rounded-xl text-sm border transition-all focus:outline-none focus:ring-2 ${
                         errors.name
                           ? "border-destructive focus:ring-destructive/30"
@@ -332,7 +332,7 @@ const Support = () => {
                         setEmail(e.target.value);
                         if (errors.email) setErrors((prev) => ({ ...prev, email: undefined }));
                       }}
-                      placeholder="e.g. tanvir@example.com"
+                      placeholder="Your Email Address"
                       className={`w-full bg-muted/50 text-foreground placeholder:text-muted-foreground px-4 py-3 rounded-xl text-sm border transition-all focus:outline-none focus:ring-2 ${
                         errors.email
                           ? "border-destructive focus:ring-destructive/30"
@@ -359,12 +359,12 @@ const Support = () => {
                       onChange={(e) => setSubject(e.target.value)}
                       className="w-full bg-muted/50 text-foreground px-4 py-3 rounded-xl text-sm border border-border focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all cursor-pointer"
                     >
+                      <option value="General Inquiry">General Inquiry</option>
                       <option value="App Issue / Bug Report">App Issue / Bug Report</option>
                       <option value="Account & Login Problem">Account & Login Problem</option>
                       <option value="Psychologist Appointment Help">Psychologist Appointment Help</option>
                       <option value="Mood Tracker / Assessments Question">Mood Tracker / Assessments Question</option>
                       <option value="Feature Request / Suggestion">Feature Request / Suggestion</option>
-                      <option value="General Inquiry">General Inquiry</option>
                     </select>
                   </div>
 

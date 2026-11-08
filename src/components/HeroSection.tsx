@@ -63,11 +63,11 @@ const HeroSection = () => {
                 href="https://apps.apple.com/us/app/hello-02-mental-health-app/id6805609446"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-card text-foreground border border-border px-6 py-3.5 rounded-xl font-semibold hover:bg-muted transition-all hover:scale-[1.03] active:scale-[0.98] shadow-sm"
+                className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-6 py-3.5 rounded-xl font-semibold hover:opacity-95 transition-all hover:scale-[1.03] active:scale-[0.98] shadow-lg shadow-primary/25 shimmer-effect"
               >
                 <AppleIcon />
                 <div className="text-left">
-                  <div className="text-[10px] font-normal opacity-60 uppercase tracking-wider">Download on</div>
+                  <div className="text-[10px] font-normal opacity-80 uppercase tracking-wider">Download on</div>
                   <div className="text-sm font-semibold -mt-0.5">App Store</div>
                 </div>
               </a>
